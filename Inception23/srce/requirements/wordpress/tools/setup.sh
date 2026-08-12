@@ -13,6 +13,10 @@ fi
 
 sed -i  's|^listen = .*|listen = 9000|' /etc/php/8.2/fpm/pool.d/www.conf
 
+until mysqladmin ping -h mariadb --silent; do
+    sleep 1
+done
+
 if [ ! -f wp-config.php ]; then
 	wp config create \
 	  --dbname=$MYSQL_DATABASE \
@@ -29,7 +33,6 @@ if ! wp core is-installed --allow-root >/dev/null 2>&1; then
 	  --admin_user=$WP_ADMIN_USER \
 	  --admin_password=$WP_ADMIN_PASSWORD \
 	  --admin_email=$WP_ADMIN_EMAIL \
-          --skip-email \
 	  --allow-root
 
 	 wp user create \

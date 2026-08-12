@@ -3,7 +3,7 @@
 set -e
 
 if [ ! -d "/var/lib/mysql/mysql" ]; then
-       mariadb-install-db --user-mysql --datadir=/var/lib/mysql
+       mariadb-install-db --user=mysql --datadir=/var/lib/mysql
 fi
 
 sed -i 's/^bind-address.*/bind-address = 0.0.0.0/' /etc/mysql/mariadb.conf.d/50-server.cnf

@@ -3,8 +3,7 @@ FROM debian:12
 RUN apt update && apt install -y \
     php-fpm \
     php-mysql \
-    curl && \
-     rm -rf /var/lib/apt/lists/*
+    curl
 	
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
