@@ -176,8 +176,6 @@ It helped me understand Docker, containers, images, networks and volumes, and al
 
 I also used AI to help with some parts of the README and documentation.
 
-The project was built and tested by me.
-
 # Docker and Design Choices
 
 ## Virtual Machines vs Docker

@@ -25,7 +25,8 @@ start:
 restart: down up
 
 clean: down
-	docker system prune -af
+	-docker rm -f mariadb wordpress nginx
+	$(COMPOSE) down --rmi all --volumes
 
 fclean: clean
 	sudo rm -rf $(DATA_DIR)/mariadb/*
@@ -33,4 +34,3 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all up setup down stop start restart clean fclean re

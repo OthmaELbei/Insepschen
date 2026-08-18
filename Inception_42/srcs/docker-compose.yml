@@ -49,8 +49,8 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/oelbied/data/wordpress
       o: bind
+      device: /home/oelbied/data/wordpress
 
 networks:
   inception:

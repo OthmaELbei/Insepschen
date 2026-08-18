@@ -3,7 +3,9 @@ FROM debian:12
 RUN apt update && apt install -y \
     php-fpm \
     php-mysql \
-    curl
+    curl \
+    netcat-openbsd \
+    mariadb-client
 	
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
